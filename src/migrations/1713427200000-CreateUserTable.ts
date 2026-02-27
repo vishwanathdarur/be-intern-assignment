@@ -16,7 +16,7 @@ export class CreateUserTable1713427200000 implements MigrationInterface {
           {
             name: 'firstName',
             type: 'varchar',
-            length: '255',
+            length: '256',
             isNullable: false,
           },
           {
@@ -38,7 +38,7 @@ export class CreateUserTable1713427200000 implements MigrationInterface {
             default: 'CURRENT_TIMESTAMP',
           },
           {
-            name: 'updatedAt',
+            name: 'upddatedAt',
             type: 'datetime',
             default: 'CURRENT_TIMESTAMP',
           },

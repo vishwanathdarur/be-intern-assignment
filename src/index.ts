@@ -1,7 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { userRouter } from './routes/user.routes';
 import { AppDataSource } from './data-source';
+
+import { userRouter } from './routes/user.routes';
+import { postRouter } from './routes/posts.routes';
+import { likeRouter } from './routes/likes.routes';
+import { followRouter } from './routes/follows.routes';
+import { hashtagRouter } from './routes/hashtags.routes';
+import { feedRouter } from './routes/feed.routes';
+import { activityRouter } from './routes/activity.routes';
 
 dotenv.config();
 
@@ -21,9 +28,14 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/users', userRouter);
+app.use('/api/posts', postRouter);
+app.use('/api/likes', likeRouter);
+app.use('/api/follows', followRouter);
+app.use('/api/hashtags', hashtagRouter);
+app.use("/api/feed", feedRouter);
+app.use("/api/activity", activityRouter);
 
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
